@@ -13,7 +13,15 @@ console.log(fetchTest1);
 
 function getDogImage(url, options){
   return fetch(url, options)
-    .then( response => response.json());
+    .then( response => {
+      console.log(response.ok);
+      console.log(response.status)
+      if(response.ok){
+        return response.json();
+      }
+
+      throw new Error('エラーです');
+    }).catch(e => console.log(e.message));
 }
 
 async function getImage(url, options){

@@ -2,6 +2,9 @@ import './style.scss';
 require('intersection-observer');
 import 'whatwg-fetch';
 
+const moment = require('moment');
+
+console.log(moment().format()); 
 // console.log('webpackテストです');
 
 

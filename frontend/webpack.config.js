@@ -20,9 +20,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          options: {
-            presets: ['@babel/preset-env']
-          }
         }
       }
     ]
@@ -31,7 +28,9 @@ module.exports = {
     filename: 'style.css',
   })],
   optimization: {
-    minimizer: [new OptimizeCssAssetsPlugin({}),
-      new TerserJSPlugin({})],
+    minimizer: [
+      new TerserJSPlugin({}),
+      new OptimizeCssAssetsPlugin({})
+    ],
   },
 };
